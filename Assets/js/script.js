@@ -1,11 +1,11 @@
 function addTimer () {
-    const relogio = document.querySelector('.relogio')
+    const relogio = document.querySelector(".relogio")
     function dateLocalTimerFromSeconds (seconds) {
         let data = new Date( seconds * 1000)
 
-        return data.toLocaleTimeString('pt-BR', {
+        return data.toLocaleTimeString("pt-BR", {
             hour12: false,
-            timeZone: 'GMT'
+            timeZone: "GMT"
         })
     }
 
@@ -19,21 +19,21 @@ function addTimer () {
         }, 1000)
     }
 
-    document.addEventListener('click', (e) => {
+    document.addEventListener("click", (e) => {
         const el = e.target;
         
-        if (el.classList.contains('iniciar')) {
+        if (el.classList.contains("iniciar")) {
             clearInterval(timer);
             startTimer();
         }
         
-        if (el.classList.contains('pausar')) {
+        if (el.classList.contains("pausar")) {
             clearInterval(timer);
         }
 
-        if (el.classList.contains('zerar')) {
+        if (el.classList.contains("zerar")) {
             clearInterval(timer);
-            relogio.innerHTML = '00:00:00';
+            relogio.innerHTML = "00:00:00";
             seconds = 0;
         }
     })
